@@ -1,78 +1,68 @@
-SubPooky - Advanced Recon & API Security Tool
+# SubPooky Finder
 
-SubPooky is an advanced reconnaissance and API security tool designed for ethical hackers, penetration testers, and security researchers. It performs subdomain enumeration, live checking, API key hunting, hidden API extraction, directory brute-forcing, parameter fuzzing, and header security analysis.
+## Overview
+SubPooky Finder is an advanced reconnaissance tool for discovering subdomains, extracting hidden APIs, detecting vulnerabilities, and hunting for API keys on a given target domain. The tool is designed for security researchers and penetration testers to enhance their reconnaissance capabilities.
 
-Features
+## Features
+- **Subdomain Discovery**: Gathers subdomains from multiple sources.
+- **Live Subdomain Checking**: Identifies active subdomains.
+- **API Key Hunting**: Searches for exposed API keys.
+- **Hidden API Extraction**: Detects potential hidden/private API endpoints.
+- **Directory Brute-Forcing**: Finds common directories on discovered subdomains.
+- **Parameter Fuzzing**: Identifies vulnerable URL parameters.
+- **Header Vulnerability Scanning**: Checks for missing security headers.
+- **Asynchronous Execution**: Fast and efficient scanning with asyncio.
 
-Subdomain Enumeration: Collects subdomains from multiple sources.
+## Installation
+### Prerequisites
+- Python 3.8+
+- `pip` package manager
 
-Live Subdomain Checking: Identifies active subdomains.
-
-API Key Hunting: Scans for exposed API keys in responses.
-
-Hidden API Extraction: Detects private and hidden API endpoints.
-
-Directory Brute-Forcing: Discovers common directories on live domains.
-
-Parameter Fuzzing: Identifies potentially vulnerable GET parameters.
-
-Header Security Analysis: Checks for misconfigurations in HTTP headers.
-
-Installation
-
-# Clone the repository
-git clone https://github.com/root60/SubPooky.git
-cd SubPooky
-
-# Install dependencies
+### Install Dependencies
+```sh
 pip install -r requirements.txt
+```
 
-Usage
-
-python subpooky.py <target-domain>
-
-Example:
-
+## Usage
+Run the tool with a target domain:
+```sh
 python subpooky.py example.com
+```
 
-Output
+### Command-Line Arguments
+- `domain` - The target domain to scan.
 
-SubPooky generates several output files containing the scan results:
+## Output
+The tool generates multiple output files:
+- `subdomains.txt` - List of discovered subdomains.
+- `live_subdomains.txt` - List of active subdomains.
+- `api_keys.txt` - Exposed API keys found.
+- `hidden_apis.txt` - Hidden API endpoints.
+- `directories.txt` - Discovered directories.
+- `vulnerable_params.txt` - Parameters vulnerable to injection.
+- `header_issues.txt` - Security header misconfigurations.
 
-subdomains.txt - List of discovered subdomains
+## Example Run
+```sh
+python subpooky.py example.com
+```
+Expected Output:
+```
+[+] Subdomains Found:
+  - api.example.com
+  - dev.example.com
+[+] Live Subdomains:
+  - api.example.com
+[+] API Keys Discovered:
+  - http://api.example.com: API_KEY_12345
+...
+```
 
-live_subdomains.txt - List of active subdomains
+## Disclaimer
+This tool is intended for educational and security research purposes only. Unauthorized use on systems without permission is prohibited.
 
-api_keys.txt - Exposed API keys found
+## License
+MIT License
 
-hidden_apis.txt - Discovered hidden API endpoints
-
-directories.txt - Identified directories
-
-vulnerable_params.txt - Potentially vulnerable parameters
-
-header_issues.txt - Security misconfigurations in headers
-
-Dependencies
-
-Python 3.x
-
-httpx
-
-tqdm
-
-colorama
-
-dns.resolver
-
-Install missing dependencies with:
-
-pip install -r requirements.txt
-
-Disclaimer
-
-This tool is intended for educational and ethical hacking purposes only. Use it responsibly and ensure you have permission to scan any domain.
-
-License
-
-This project is open-source and available under the MIT License.
+## Author
+Developed by RedHydra.
