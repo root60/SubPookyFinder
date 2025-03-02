@@ -1,5 +1,8 @@
 # SubPooky Finder
 
+
+![SubPooky Finder](Capture.png)
+
 ## Overview
 SubPooky Finder is an advanced reconnaissance tool for discovering subdomains, extracting hidden APIs, detecting vulnerabilities, and hunting for API keys on a given target domain. The tool is designed for security researchers and penetration testers to enhance their reconnaissance capabilities.
 
